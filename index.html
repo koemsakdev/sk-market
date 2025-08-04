@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SK Market</title>
-    <link rel="shortcut icon" href="assets//public/favicon.ico" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="assets//public/favicon.ico"
+      type="image/x-icon"
+    />
     <link href="libs/animate/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="libs/swiper-bundle.min.css" />
     <link rel="stylesheet" href="libs/fontawesome-6.6.0/css/all.min.css" />
@@ -15,8 +19,64 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
+
   <body>
-    
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="assets/imgs/SKMarket.png"
+            width="100"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link text-primary position-relative">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span
+                  class="position-absolute top-1 start-90 translate-middle badge rounded-pill bg-none text-danger"
+                >
+                  99+
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link text-primary hover:text-danger">
+                <i class="fa-regular fa-user"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <script src="libs/swiper-bundle.min.js"></script>
     <script src="libs/fontawesome-6.6.0/js/all.min.js"></script>

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bokor&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sora", "Bokor", sans-serif;
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: orangered;
+}
+
+.navbar-nav .nav-link.active {
+    color: orangered;
+    font-weight: bold;
+}
