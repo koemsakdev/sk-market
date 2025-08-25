@@ -206,3 +206,27 @@ body {
 .text-yellow {
     color: #ffb700;
 }
+
+.banner {
+    background-image: url('../imgs/banner-1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    color: white !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-custom {
+    background: orangered;
+    color: white;
+}
+
+.btn-custom:hover {
+    background: black;
+    color: white;
+    transform: translateY(-1px);
+    transition: 0.8s;
+}
