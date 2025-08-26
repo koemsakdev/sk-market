@@ -116,11 +116,6 @@ body {
     background: linear-gradient(to bottom, #ffffff00, #000000) !important;
 }
 
-.top-bar {
-    height: 45px;
-    border-bottom: 1px solid rgba(0, 0, 0, .07);
-}
-
 /* Carousel */
 .swiper {
     width: 100%;
@@ -182,10 +177,18 @@ body {
     transition: 0.8s;
 }
 
+.product-feature h5 {
+    line-clamp: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
 
 .product-feature:hover img {
     opacity: 0.8;
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: 0.8s;
 }
 
@@ -195,10 +198,12 @@ body {
     background-color: orangered !important;
     color: #fff !important;
     border: 1px solid orangered !important;
+    margin-top: 10px;
     opacity: 1;
 }
 
 .btn-feature {
+    margin-top: 10px;
     transform: translateY(30px);
     opacity: 0;
 }
@@ -229,4 +234,35 @@ body {
     color: white;
     transform: translateY(-1px);
     transition: 0.8s;
+}
+
+footer {
+    padding-top: 40px;
+    background: #3a3a3a;
+}
+
+.ul-text li a {
+    color: orangered;
+}
+.ul-text li:hover a {
+    color: white;
+}
+
+
+.ul-icon li {
+    background: white;
+    border: 1px solid white;
+}
+.ul-icon li a {
+    color: black;
+}
+
+.ul-icon li:hover {
+    background: orangered;
+    border: 1px solid orangered;
+    transition: all 0.3s;
+}
+.ul-icon li:hover a {
+    color: white;
+    transition: all 0.3s;
 }
