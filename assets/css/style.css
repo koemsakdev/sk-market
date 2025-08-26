@@ -244,10 +244,10 @@ footer {
 .ul-text li a {
     color: orangered;
 }
-.ul-text li:hover a {
-    color: white;
+.ul-text li a:hover {
+    color: #00aeff;
+    text-decoration: underline !important;
 }
-
 
 .ul-icon li {
     background: white;
