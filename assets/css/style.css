@@ -107,11 +107,11 @@ hr {
 
 .bg-blur {
     backdrop-filter: blur(15px);
-    background: #000000b6;
+    background: white;
 }
 
 .bg-blur-primary {
-    /* backdrop-filter: blur(10px); */
+    backdrop-filter: blur(10px);
     background: #ffb76e7e;
 }
 
@@ -262,23 +262,6 @@ footer {
     text-decoration: underline !important;
 }
 
-.ul-icon li {
-    background: white;
-    border: 1px solid white;
-}
-.ul-icon li a {
-    color: black;
-}
-
-.ul-icon li:hover {
-    background: orangered;
-    border: 1px solid orangered;
-    transition: all 0.3s;
-}
-.ul-icon li:hover a {
-    color: white;
-    transition: all 0.3s;
-}
 .pagination {
     font-family: 'Noto Sans Mono', monospace !important;
 }
