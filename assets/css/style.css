@@ -14,8 +14,9 @@ body {
 hr {
   border: none;
   width: 10%;
-  height: 3px;
-  background: linear-gradient(to right, white, orangered, white);
+  height: 4px;
+  border-radius: 40px;
+  background: orangered;
   opacity: 1;
 }
 
@@ -282,3 +283,39 @@ footer {
     background-color: orangered;
 }
 
+/* Hide arrow up/down on input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input {
+    box-shadow: none !important;
+    outline: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.btn-add-to-cart,
+.btn-checkout {
+    background-color: orangered;
+    color: #fff;
+    border: 1px solid orangered;
+    border-radius: 0;
+}
+.btn-add-to-cart:hover,
+.btn-checkout:hover {
+    background-color: orangered;
+    color: #fff;
+    border: 1px solid orangered;
+    transition: 0.8s;
+}
+
+table thead tr th {
+    background: orangered !important;
+    opacity: 0.8;
+    color: #fff !important;
+}

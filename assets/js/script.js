@@ -10,7 +10,7 @@
         $("#spinner").removeClass("show");
         $("body").removeClass("overflow-hidden");
       }
-    }, 1000);
+    }, 100);
   };
   spinner();
 
@@ -32,4 +32,14 @@
       }
     }
   });
+
+  // Single Product
+  if (page == "single_product") {
+    $(".sub-product").on("click", function () {
+      let newSrc = $(this).attr("src");
+      $("#main-img").attr("src", newSrc);
+      $(".sub-product").removeClass("border-danger");
+      $(this).addClass("border-danger");
+    });
+  }
 })(jQuery);
