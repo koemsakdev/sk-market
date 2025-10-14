@@ -55,7 +55,7 @@
                 Login
               </button>
               <span class="d-block text-center mt-3">
-                Don't have an account? <a href="/register.html" class="link-text">Register</a>
+                Don't have an account? <a href="register.php" class="link-text">Register</a>
               </span>
             </form>
           </div>

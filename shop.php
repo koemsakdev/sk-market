@@ -22,7 +22,7 @@
   </head>
 
   <body class="overflow-hidden">
-    <input type="hidden" name="page" value="home" id="pages" />
+    <input type="hidden" name="page" value="shop" id="pages" />
     <!-- Spinner Start -->
     <div
       id="spinner"
@@ -34,183 +34,15 @@
 
     <div id="navbar"></div>
 
-    <!-- Carousel Swipper Start -->
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img
-            src="assets/imgs/banner-1.jpg"
-            alt="Hero Image"
-            class="img-fluid"
-          />
-          <div class="carousel-caption">
-            <div class="container">
-              <div class="row justify-content-start">
-                <div class="col-lg-7 col-md-7 col-sm-8 col-8">
-                  <h6 class="text-uppercase text-light animated slideInDown">
-                    New Arrival
-                  </h6>
-                  <h1 class="display-5 fw-bold mb-2 animated slideInDown">
-                    Best Prices <span class="text-light">This Season</span>
-                  </h1>
-                  <p class="animated slideInDown">
-                    <strong>SK Market</strong>
-                    <span class="text-light"
-                      >offer the best products for the mosth affordable
-                      prices</span
-                    >
-                  </p>
-                  <a
-                    href=""
-                    class="btn btn-outline-light rounded-0 animated slideInDown py-sm-2 px-sm-4"
-                    >SHOP NOW</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Carousel End -->
-
-    <!-- Brand Start -->
-    <section class="container-fluid py-5">
-      <div class="container">
-        <div class="row g-4">
-          <div
-            class="col-md-6 col-lg-3 col-md-3 col-sm-6 col-6 wow fadeIn cursor-pointer"
-            data-wow-delay="0.1s"
-          >
-            <div class="brand-item">
-              <img
-                class="img-fluid"
-                src="assets/imgs/brand-1.jpg"
-                alt="Banner-1"
-              />
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-3 col-md-3 col-sm-6 col-6 wow fadeIn cursor-pointer"
-            data-wow-delay="0.3s"
-          >
-            <div class="brand-item">
-              <img
-                class="img-fluid"
-                src="assets/imgs/brand-2.jpg"
-                alt="Banner-2"
-              />
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-3 col-md-3 col-sm-6 col-6 wow fadeIn cursor-pointer"
-            data-wow-delay="0.5s"
-          >
-            <div class="brand-item">
-              <img
-                class="img-fluid"
-                src="assets/imgs/brand-3.jpg"
-                alt="Banner-3"
-              />
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-3 col-md-3 col-sm-6 col-6 wow fadeIn cursor-pointer"
-            data-wow-delay="0.7s"
-          >
-            <div class="brand-item">
-              <img
-                class="img-fluid"
-                src="assets/imgs/brand-4.jpg"
-                alt="Banner-4"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Brand End -->
-
-    <!-- News  Start -->
-    <section>
-      <div class="row g-0">
-        <div class="col-lg-4 wow fadeIn cursor-pointer" data-wow-delay="0.1s">
-          <div class="card border-0 shadow-none rounded-0 outline-0">
-            <img
-              src="assets/imgs/news-1.jpg"
-              class="card-img img-fluid rounded-0"
-              alt="news-1"
-            />
-            <div
-              class="card-img-overlay shadow-none border-0 outline-0 rounded-0 bg-dark p-2 text-dark bg-opacity-50 d-flex align-items-center justify-content-lg-start justify-content-center"
-            >
-              <div class="text-lg-start text-center">
-                <h2 class="card-title text-warning">Extemly Awesome Shoes</h2>
-                <a
-                  href="#"
-                  class="btn btn-outline-light rounded-0 text-uppercase"
-                  >Shop Now</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 wow fadeIn cursor-pointer" data-wow-delay="0.1s">
-          <div class="card border-0 shadow-none rounded-0 outline-0">
-            <img
-              src="assets/imgs/news-2.jpg"
-              class="card-img img-fluid rounded-0"
-              alt="news-2"
-            />
-            <div
-              class="card-img-overlay shadow-none border-0 outline-0 rounded-0 bg-dark p-2 text-dark bg-opacity-50 d-flex align-items-center justify-content-center"
-            >
-              <div class="text-center">
-                <h2 class="card-title text-warning">Awesome Jacket</h2>
-                <a
-                  href="#"
-                  class="btn btn-outline-light rounded-0 text-uppercase"
-                  >Shop Now</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 wow fadeIn cursor-pointer" data-wow-delay="0.1s">
-          <div class="card border-0 shadow-none rounded-0 outline-0">
-            <img
-              src="assets/imgs/news-3.jpg"
-              class="card-img img-fluid rounded-0"
-              alt="news-3"
-            />
-            <div
-              class="card-img-overlay shadow-none border-0 outline-0 rounded-0 bg-dark p-2 text-dark bg-opacity-50 d-flex align-items-center justify-content-lg-end justify-content-center"
-            >
-              <div class="text-lg-end text-center">
-                <h2 class="card-title text-warning">50% OFF Watches</h2>
-                <a
-                  href="#"
-                  class="btn btn-outline-light rounded-0 text-uppercase"
-                  >Shop Now</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- News End -->
-
-    <!-- Product Feature Start -->
     <section class="my-5">
-      <div class="container text-center py-2">
-        <h2 class="display-6 fw-bold">Our Feature</h2>
-        <hr class="my-3 mx-auto">
-        <p class="text-muted">Here you can check out our fetured products.</p>
+      <div class="container py-2">
+        <h2 class="display-6 fw-bold mt-3">Our Products</h2>
+        <hr class="my-3" />
+        <p class="text-muted">Here you can check out our products.</p>
       </div>
       <div class="row mx-auto container">
         <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.1s"
         >
           <img
@@ -234,7 +66,7 @@
           >
         </div>
         <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.3s"
         >
           <img
@@ -258,7 +90,7 @@
           >
         </div>
         <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.3s"
         >
           <img
@@ -282,7 +114,7 @@
           >
         </div>
         <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.3s"
         >
           <img
@@ -305,36 +137,8 @@
             >Buy Now</a
           >
         </div>
-      </div>
-    </section>
-    <!-- Product Feature End -->
-
-    <!-- Banner Start -->
-    <section class="my-5 banner">
-      <div class="container py-2">
-        <h6 class="text-uppercase text-light animated slideInDown">
-          Mid Season's Sale
-        </h6>
-        <h2 class="display-6">Authmn Collection <br />Up to 30% Off</h2>
-        <a
-          href="#"
-          class="btn btn-custom rounded-0 text-uppercase px-4 btn-banner"
-          >Shop Now</a
-        >
-      </div>
-    </section>
-    <!-- Banner -->
-
-    <!-- Cloth Start -->
-    <section class="my-5">
-      <div class="container text-center py-2">
-        <h2 class="display-6 fw-bold">Dresses & Coats</h2>
-        <hr class="mx-auto my-3">
-        <p class="text-muted">Here you can check out our amazing cloths.</p>
-      </div>
-      <div class="row mx-auto container">
         <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.1s"
         >
           <img
@@ -358,7 +162,7 @@
           >
         </div>
         <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.3s"
         >
           <img
@@ -382,7 +186,7 @@
           >
         </div>
         <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.3s"
         >
           <img
@@ -406,7 +210,7 @@
           >
         </div>
         <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.3s"
         >
           <img
@@ -430,19 +234,92 @@
           >
         </div>
       </div>
-    </section>
-    <!-- Cloth End -->
-
-    <!-- Shoes Start -->
-    <section class="my-5">
-      <div class="container text-center py-2">
-        <h2 class="display-6 fw-bold">Shoes</h2>
-        <hr class="mx-auto my-3">
-        <p class="text-muted">Here you can check out our amazing shoes.</p>
-      </div>
       <div class="row mx-auto container">
         <div
           class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          data-wow-delay="0.1s"
+          onclick="window.location.href='product_details.php'"
+        >
+          <img src="assets/imgs/watch-1.png" alt="Watch 1" class="img-fluid" />
+          <div class="stars mt-3">
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+          </div>
+          <h5 class="mt-2 mb-1 text-muted">Apple Watch SE</h5>
+          <p class="text-muted mb-1">$249.00</p>
+          <a
+            href="#"
+            class="btn btn-dark rounded-0 text-uppercase px-4 btn-feature"
+            >Buy Now</a
+          >
+        </div>
+        <div
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          data-wow-delay="0.3s"
+        >
+          <img src="assets/imgs/watch-2.png" alt="Watch 2" class="img-fluid" />
+          <div class="stars mt-3">
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+          </div>
+          <h5 class="mt-2 mb-1 text-muted">Apple Watch Series 10</h5>
+          <p class="text-muted mb-1">$399.00</p>
+          <a
+            href="#"
+            class="btn btn-dark rounded-0 text-uppercase px-4 btn-feature"
+            >Buy Now</a
+          >
+        </div>
+        <div
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          data-wow-delay="0.3s"
+        >
+          <img src="assets/imgs/watch-3.png" alt="Watch 3" class="img-fluid" />
+          <div class="stars mt-3">
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+          </div>
+          <h5 class="mt-2 mb-1 text-muted">Apple Watch Hermès Ultra 2</h5>
+          <p class="text-muted mb-1">$1399.00</p>
+          <a
+            href="#"
+            class="btn btn-dark rounded-0 text-uppercase px-4 btn-feature"
+            >Buy Now</a
+          >
+        </div>
+        <div
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          data-wow-delay="0.3s"
+        >
+          <img src="assets/imgs/watch-4.png" alt="Watch 4" class="img-fluid" />
+          <div class="stars mt-3">
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+            <i class="fas fa-star text-yellow"></i>
+          </div>
+          <h5 class="mt-2 mb-1 text-muted">Apple Watch Hermès Series 10</h5>
+          <p class="text-muted mb-1">$1249.00</p>
+          <a
+            href="#"
+            class="btn btn-dark rounded-0 text-uppercase px-4 btn-feature"
+            >Buy Now</a
+          >
+        </div>
+      </div>
+      <div class="row mx-auto container">
+        <div
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.1s"
         >
           <img src="assets/imgs/shoes-1.jpg" alt="Shoes 1" class="img-fluid" />
@@ -462,7 +339,7 @@
           >
         </div>
         <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.3s"
         >
           <img src="assets/imgs/shoes-2.jpg" alt="Shoes 2" class="img-fluid" />
@@ -482,7 +359,7 @@
           >
         </div>
         <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
+          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer mb-5"
           data-wow-delay="0.3s"
         >
           <img src="assets/imgs/shoes-3.jpg" alt="Shoes 3" class="img-fluid" />
@@ -602,101 +479,25 @@
           >
         </div>
       </div>
-    </section>
-    <!-- Shoes End -->
 
-    <!-- Watch Start -->
-    <section class="my-5">
-      <div class="container text-center py-2">
-        <h2 class="display-6 fw-bold">Watches</h2>
-        <hr class="mx-auto my-3">
-        <p class="text-muted">Here you can check out our amazing watches.</p>
-      </div>
-      <div class="row mx-auto container">
-        <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
-          data-wow-delay="0.1s"
-          onclick="window.location.href='product_details.html'"
-        >
-          <img src="assets/imgs/watch-1.png" alt="Watch 1" class="img-fluid" />
-          <div class="stars mt-3">
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-          </div>
-          <h5 class="mt-2 mb-1 text-muted">Apple Watch SE</h5>
-          <p class="text-muted mb-1">$249.00</p>
-          <a
-            href="#"
-            class="btn btn-dark rounded-0 text-uppercase px-4 btn-feature"
-            >Buy Now</a
-          >
-        </div>
-        <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
-          data-wow-delay="0.3s"
-        >
-          <img src="assets/imgs/watch-2.png" alt="Watch 2" class="img-fluid" />
-          <div class="stars mt-3">
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-          </div>
-          <h5 class="mt-2 mb-1 text-muted">Apple Watch Series 10</h5>
-          <p class="text-muted mb-1">$399.00</p>
-          <a
-            href="#"
-            class="btn btn-dark rounded-0 text-uppercase px-4 btn-feature"
-            >Buy Now</a
-          >
-        </div>
-        <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
-          data-wow-delay="0.3s"
-        >
-          <img src="assets/imgs/watch-3.png" alt="Watch 3" class="img-fluid" />
-          <div class="stars mt-3">
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-          </div>
-          <h5 class="mt-2 mb-1 text-muted">Apple Watch Hermès Ultra 2</h5>
-          <p class="text-muted mb-1">$1399.00</p>
-          <a
-            href="#"
-            class="btn btn-dark rounded-0 text-uppercase px-4 btn-feature"
-            >Buy Now</a
-          >
-        </div>
-        <div
-          class="product-feature text-center col-lg-3 col-md-4 col-sm-12 wow fadeIn cursor-pointer"
-          data-wow-delay="0.3s"
-        >
-          <img src="assets/imgs/watch-4.png" alt="Watch 4" class="img-fluid" />
-          <div class="stars mt-3">
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-            <i class="fas fa-star text-yellow"></i>
-          </div>
-          <h5 class="mt-2 mb-1 text-muted">Apple Watch Hermès Series 10</h5>
-          <p class="text-muted mb-1">$1249.00</p>
-          <a
-            href="#"
-            class="btn btn-dark rounded-0 text-uppercase px-4 btn-feature"
-            >Buy Now</a
-          >
-        </div>
+      <div class="container">
+        <nav class="my-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a href="#" class="page-link">Previous</a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-current="page">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
       </div>
     </section>
-    <!-- Watch End -->
 
     <div id="footer"></div>
 

@@ -63,7 +63,7 @@
                 Register
               </button>
               <span class="d-block text-center mt-3">
-                Have an account yet? <a href="/login.html" class="link-text">Login</a>
+                Have an account yet? <a href="login.php" class="link-text">Login</a>
               </span>
             </form>
           </div>

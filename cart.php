@@ -207,7 +207,7 @@
           </div>
         </div>
         <div class="d-flex justify-content-end">
-          <a href="checkout.html" class="btn btn-checkout rounded-0">Checkout</a>
+          <a href="checkout.php" class="btn btn-checkout rounded-0">Checkout</a>
         </div>
       </div>
 
