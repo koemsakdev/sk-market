@@ -164,7 +164,7 @@ $coats = getProducts(4, "Coats");
                   </div>
                   <h5 class='mt-2 mb-1 text-muted'>{$product['product_name']}</h5>
                   <p class='text-muted mb-1'>$ {$product['product_price']}</p>
-                  <a href='#' class='btn btn-dark rounded-0 text-uppercase px-4 btn-feature'>Buy Now</a>
+                  <a href='product_details.php?id={$product['product_id']}' class='btn btn-dark rounded-0 text-uppercase px-4 btn-feature'>Buy Now</a>
                 </div>
                 ";
         }
@@ -217,7 +217,7 @@ $coats = getProducts(4, "Coats");
                   </div>
                   <h5 class='mt-2 mb-1 text-muted'>{$product['product_name']}</h5>
                   <p class='text-muted mb-1'>$ {$product['product_price']}</p>
-                  <a href='#' class='btn btn-dark rounded-0 text-uppercase px-4 btn-feature'>Buy Now</a>
+                  <a href='product_details.php?id={$product['product_id']}' class='btn btn-dark rounded-0 text-uppercase px-4 btn-feature'>Buy Now</a>
                 </div>
                 ";
         }

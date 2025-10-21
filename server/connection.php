@@ -57,3 +57,11 @@ function getProducts($limit = 4, $category = null)
 
     return fetchQuery($sql, $params, str_repeat("s", count($params) - 1) . "i");
 }
+
+
+function getProductById($id)
+{
+    $sql = "SELECT * FROM products WHERE product_id = ?";
+    $params = [$id];
+    return fetchQuery($sql, $params, "s");
+}

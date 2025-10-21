@@ -1,67 +1,97 @@
+<?php
+session_start();
+if (isset($_POST['add_to_cart'])) {
+  $product_id = $_POST['product_id'];
+  $product_name = $_POST['product_name'];
+  $product_price = $_POST['product_price'];
+  $quantity = $_POST['quantity'];
+  $product_image = $_POST['product_image'];
+  if (isset($_SESSION['cart'])) {
+    $cart_id = array_column($_SESSION['cart'], 'product_id');
+    if (!in_array($product_id, $cart_id)) {
+      $cart = [
+        'product_id' => $product_id,
+        'product_name' => $product_name,
+        'product_price' => $product_price,
+        'quantity' => $quantity,
+        'product_image' => $product_image,
+      ];
+
+      $_SESSION['cart'][$product_id] = $cart;
+    } else {
+      echo "<script>alert('Product already in cart');</script>";
+      echo "<script>window.location.href = 'index.php';</script>";
+    }
+  } else {
+    $cart = [
+      'product_id' => $product_id,
+      'product_name' => $product_name,
+      'product_price' => $product_price,
+      'quantity' => $quantity,
+      'product_image' => $product_image,
+    ];
+
+    $_SESSION['cart'][$product_id] = $cart;
+  }
+} else {
+  header("Location: index.php");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SK Market</title>
-    <link
-      rel="shortcut icon"
-      href="assets//public/favicon.ico"
-      type="image/x-icon"
-    />
-    <link href="libs/animate/animate.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="libs/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="libs/fontawesome-6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="libs/boostrap-5.3.3/css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="libs/owlcarousel/assets/owl.carousel.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/style-responsive.css" />
-  </head>
 
-  <body class="overflow-hidden">
-    <input type="hidden" name="page" value="cart" id="pages" />
-    <!-- Spinner Start -->
-    <div
-      id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <span class="loader"></span>
-    </div>
-    <!-- Spinner End -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SK Market</title>
+  <link rel="shortcut icon" href="assets//public/favicon.ico" type="image/x-icon" />
+  <link href="libs/animate/animate.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="libs/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="libs/fontawesome-6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="libs/boostrap-5.3.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="libs/owlcarousel/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style-responsive.css" />
+</head>
 
-    <div id="navbar"></div>
+<body class="overflow-hidden">
+  <input type="hidden" name="page" value="cart" id="pages" />
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <span class="loader"></span>
+  </div>
+  <!-- Spinner End -->
 
-    <!-- Related product Feature Start -->
-    <section class="my-5 py-5">
-      <div class="container py-2">
-        <h2 class="display-6 fw-bold">Related Products</h2>
-        <hr class="my-3" />
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr class="align-middle">
-                <th scope="col">Product</th>
-                <th scope="col">Quantity</th>
-                <th scope="col" class="text-end">Total</th>
-              </tr>
-            </thead>
-            <tbody>
+  <div id="navbar"></div>
+
+  <!-- Related product Feature Start -->
+  <section class="my-5 py-5">
+    <div class="container py-2">
+      <h2 class="display-6 fw-bold">Related Products</h2>
+      <hr class="my-3" />
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr class="align-middle">
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col" class="text-end">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <?php foreach ($_SESSION['cart'] as $cart): ?>
               <tr class="align-middle">
                 <td>
                   <div class="d-flex align-items-center">
-                    <img
-                      src="assets/imgs/watch-1.png"
-                      alt="Product 1"
-                      class="img-fluid"
-                      style="height: 80px"
-                    />
+                    <img src="assets/imgs/<?php echo $cart['product_image']; ?>" alt="<?php echo $cart['product_id']; ?>" class="img-fluid" style="height: 80px" />
                     <div class="ms-1 ms-md-2">
-                      <p class="fw-bold mb-1" id="product-name">Apple Watch Series 9</p>
-                      <p class="text-muted mb-0" id="product-price">$249.00</p>
-                      <button class="btn btn-link p-0 text-danger">
+                      <p class="fw-bold mb-1" id="product-name"><?php echo $cart['product_name']; ?></p>
+                      <p class="text-muted mb-0" id="product-price">$<?php echo $cart['product_price']; ?></p>
+                      <button class="btn btn-link p-0 text-danger" onclick="removeFromCart(<?php echo $cart['product_id']; ?>)">
                         Remove
                       </button>
                     </div>
@@ -72,160 +102,50 @@
                     <button class="btn btn-link p-1 text-danger">
                       <i class="fas fa-minus"></i>
                     </button>
-                    <input
-                      type="number"
-                      class="form-control text-center rounded-0 quantity-input"
-                      value="1"
-                      style="width: 60px;"
-                    />
+                    <input type="number" class="form-control text-center rounded-0 quantity-input" value="<?php echo $cart['quantity']; ?>"
+                      style="width: 60px;" />
                     <button class="btn btn-link p-1 text-danger">
                       <i class="fas fa-plus"></i>
                     </button>
                   </div>
                 </td>
-                <td class="text-end">$249.00</td>
+                <td class="text-end">$<?php echo $cart['product_price'] * $cart['quantity']; ?></td>
               </tr>
-              <tr class="align-middle">
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img
-                      src="assets/imgs/watch-2.png"
-                      alt="Product 1"
-                      class="img-fluid"
-                      style="height: 80px"
-                    />
-                    <div class="ms-1 ms-md-2">
-                      <p class="fw-bold mb-1" id="product-name">Apple Watch Series 9</p>
-                      <p class="text-muted mb-0" id="product-price">$249.00</p>
-                      <button class="btn btn-link p-0 text-danger">
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div class="d-flex align-items-center gap-1 gap-sm-2">
-                    <button class="btn btn-link p-1 text-danger">
-                      <i class="fas fa-minus"></i>
-                    </button>
-                    <input
-                      type="number"
-                      class="form-control text-center rounded-0 quantity-input"
-                      value="1"
-                      style="width: 60px;"
-                    />
-                    <button class="btn btn-link p-1 text-danger">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </td>
-                <td class="text-end">$249.00</td>
-              </tr>
-              <tr class="align-middle">
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img
-                      src="assets/imgs/watch-3.png"
-                      alt="Product 1"
-                      class="img-fluid"
-                      style="height: 80px"
-                    />
-                    <div class="ms-1 ms-md-2">
-                      <p class="fw-bold mb-1" id="product-name">Apple Watch Series 9</p>
-                      <p class="text-muted mb-0" id="product-price">$249.00</p>
-                      <button class="btn btn-link p-0 text-danger">
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div class="d-flex align-items-center gap-1 gap-sm-2">
-                    <button class="btn btn-link p-1 text-danger">
-                      <i class="fas fa-minus"></i>
-                    </button>
-                    <input
-                      type="number"
-                      class="form-control text-center rounded-0 quantity-input"
-                      value="1"
-                      style="width: 60px;"
-                    />
-                    <button class="btn btn-link p-1 text-danger">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </td>
-                <td class="text-end">$249.00</td>
-              </tr>
-              <tr class="align-middle">
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img
-                      src="assets/imgs/watch-4.png"
-                      alt="Product 1"
-                      class="img-fluid"
-                      style="height: 80px"
-                    />
-                    <div class="ms-1 ms-md-2">
-                      <p class="fw-bold mb-1" id="product-name">Apple Watch Series 9</p>
-                      <p class="text-muted mb-0" id="product-price">$249.00</p>
-                      <button class="btn btn-link p-0 text-danger">
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div class="d-flex align-items-center gap-1 gap-sm-2">
-                    <button class="btn btn-link p-1 text-danger">
-                      <i class="fas fa-minus"></i>
-                    </button>
-                    <input
-                      type="number"
-                      class="form-control text-center rounded-0 quantity-input"
-                      value="1"
-                      style="width: 60px;"
-                    />
-                    <button class="btn btn-link p-1 text-danger">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </td>
-                <td class="text-end">$249.00</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Cart Grand Total -->
-        <div class="d-flex justify-content-end">
-          <div class="d-flex gap-3 align-items-center">
-            <h5 class="fw-bold mt-1">Grand Total:</h5>
-            <p class="fs-4 mb-2">
-              $<span id="cart-grand-total">996.00</span>
-            </p>
-          </div>
-        </div>
-        <div class="d-flex justify-content-end">
-          <a href="checkout.php" class="btn btn-checkout rounded-0">Checkout</a>
-        </div>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
       </div>
 
-    </section>
-    <!-- Related product Feature End -->
+      <!-- Cart Grand Total -->
+      <div class="d-flex justify-content-end">
+        <div class="d-flex gap-3 align-items-center">
+          <h5 class="fw-bold mt-1">Grand Total:</h5>
+          <p class="fs-4 mb-2">
+            $<span id="cart-grand-total"></span>
+          </p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <a href="checkout.php" class="btn btn-checkout rounded-0">Checkout</a>
+      </div>
+    </div>
 
-    
-    <div id="footer"></div>
+  </section>
+  <!-- Related product Feature End -->
 
-    <script src="libs/swiper-bundle.min.js"></script>
-    <script src="libs/fontawesome-6.6.0/js/all.min.js"></script>
-    <script src="libs/boostrap-5.3.3/js/popper.min.js"></script>
-    <script src="libs/boostrap-5.3.3/js/bootstrap.min.js"></script>
-    <script src="libs/jquery-3.7.1.min.js"></script>
-    <script src="libs/wow/wow.min.js"></script>
-    <script src="libs/easing/easing.min.js"></script>
-    <script src="libs/waypoints/waypoints.min.js"></script>
-    <script src="libs/owlcarousel/owl.carousel.min.js"></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+
+  <div id="footer"></div>
+
+  <script src="libs/swiper-bundle.min.js"></script>
+  <script src="libs/fontawesome-6.6.0/js/all.min.js"></script>
+  <script src="libs/boostrap-5.3.3/js/popper.min.js"></script>
+  <script src="libs/boostrap-5.3.3/js/bootstrap.min.js"></script>
+  <script src="libs/jquery-3.7.1.min.js"></script>
+  <script src="libs/wow/wow.min.js"></script>
+  <script src="libs/easing/easing.min.js"></script>
+  <script src="libs/waypoints/waypoints.min.js"></script>
+  <script src="libs/owlcarousel/owl.carousel.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>
