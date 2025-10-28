@@ -1,11 +1,15 @@
 <?php
+session_start();
+
 if (isset($_POST['checkout'])) {
   $grand_total = $_POST['grand_total'];
   // Remove commas and convert to float
   $grand_total = (float) str_replace(',', '', $grand_total);
   $grand_total = number_format($grand_total, 2, '.', ',');
+  $_SESSION['total'] = $grand_total;
 } else {
-  $grand_total = '0.00';
+  $grand_total = (float) str_replace(',', '', 0);
+  $_SESSION['total'] = $grand_total;
 }
 ?>
 <!DOCTYPE html>
@@ -48,23 +52,23 @@ if (isset($_POST['checkout'])) {
             <div class="row g-2">
               <div class="col-md-6">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control rounded-0" id="name" />
+                <input type="text" class="form-control rounded-0" id="name" value="Testing User" name="name" />
               </div>
               <div class="col-md-6">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control rounded-0" id="email" />
+                <input type="email" class="form-control rounded-0" id="email" value="example.test@gmail.com" name="email" />
               </div>
               <div class="col-md-6">
                 <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control rounded-0" id="phone" />
+                <input type="text" class="form-control rounded-0" id="phone" value="081234567890" name="phone" />
               </div>
               <div class="col-md-6">
                 <label for="city" class="form-label">City</label>
-                <input type="text" class="form-control rounded-0" id="city" />
+                <input type="text" class="form-control rounded-0" id="city" value="Phnom Penh" name="city" />
               </div>
               <div class="col-md-12">
                 <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control rounded-0" id="address" />
+                <input type="text" class="form-control rounded-0" id="address" value="123 Main St, Phnom Penh" name="address" />
               </div>
 
 
@@ -77,7 +81,7 @@ if (isset($_POST['checkout'])) {
               <div class="col-md-12 d-flex justify-content-end">
                 <!-- Show the grand total amount -->
 
-                <button type="submit" class="btn btn-checkout" type="submit">
+                <button type="submit" class="btn btn-checkout" type="submit" name="place_order">
                   Check Out
                 </button>
               </div>

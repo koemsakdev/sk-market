@@ -1,64 +1,11 @@
 <?php
 include "server/connection.php";
 session_start();
-$error = "";
 
-if (isset($_POST['place_order'])) {
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $phone = $_POST['phone'];
-  $city = $_POST['city'];
-  $address = $_POST['address'];
-  $order_cost = $_SESSION['total'];
-  $order_status = "pending";
-  $user_id = 1;
-  $order_date = date("Y-m-d H:i:s");
-
-  $data = [
-    "order_cost" => $order_cost,
-    "order_status" => $order_status,
-    "user_id" => $user_id,
-    "user_phone" => $phone,
-    "user_city" => $city,
-    "user_address" => $address,
-    "order_date" => $order_date,
-  ];
-  $order_id = insertOrder($data);
-
-  $cards = $_SESSION['cart'];
-
-  foreach ($cards as $card) {
-    $product_id = $card['product_id'];
-    $product_name = $card['product_name'];
-    $product_image = $card['product_image'];
-    $product_price = $card['product_price'];
-    $product_quantity = $card['quantity'];
-    $data = [
-      "order_id" => $order_id,
-      "product_id" => $product_id,
-      "product_name" => $product_name,
-      "product_image" => $product_image,
-      "product_price" => $product_price,
-      "product_quantity" => $product_quantity,
-      "user_id" => $user_id,
-      "order_date" => $order_date,
-    ];
-    
-    insertOrderItems($data);
-  }
-
-  // If everything is fine, redirect to payment.php
-  if ($order_id) {
-    header("Location: payment.php?order_id=$order_id&order_status=$order_status");
-    exit();
-  } else {
-    $error = "Order placement failed. Please try again.";
-  }
-
-  // if ($order_id) {
-  //   unset($_SESSION['cart']);
-  //   unset($_SESSION['total']);
-  // }
+if (isset($_GET['order_id']) && $_GET['order_status'] != "") {
+  $order_id = $_GET['order_id'];
+  $order_status = $_GET['order_status'];
+  $order = getOrderById($order_id)[0];
 }
 
 ?>
@@ -94,12 +41,21 @@ if (isset($_POST['place_order'])) {
   <!-- Register Form Start -->
   <section class="my-5 py-5">
     <div class="container py-2">
-      <h2 class="display-6 fw-bold text-center text-danger">Order Placement Status</h2>
-      <hr class="my-3 mx-auto" />
-      <p class="text-danger text-center"><?php echo $error; ?></p>
+      <h2 class="display-6 fw-bold text-center text-primary">Payment Detail</h2>
+      <hr class="my-3 mx-auto border-primary border-2" />
+      <p class="text-muted text-center">
+        Thank you for your order!
+      </p>
+      <p class="text-muted text-center">
+        Your total payment is: <strong class="fw-bold text-success fs-4">$<?php echo $order['order_cost']; ?></strong>.
+      </p>
+      <p class="text-muted text-center">
+        Your order status is <span class="text-capitalize text-warning fw-bold"><?php echo $order_status; ?></span>.
+      </p>
+
       <div class="d-flex justify-content-center">
-        <a href="checkout.php" class="btn btn-checkout rounded-0">Get Back<i
-            class="fa fa-arrow-right ms-2"></i></a>
+        <a href="index.php" class="btn btn-primary rounded-0">Pay Now <i
+            class="fa fa-credit-card ms-2"></i></a>
       </div>
     </div>
   </section>
