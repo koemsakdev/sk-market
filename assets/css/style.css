@@ -24,6 +24,10 @@ hr {
   opacity: 1;
 }
 
+input[type="password"] {
+  font-family: system-ui, sans-serif !important;
+}
+
 .navbar-nav .nav-link {
     color: orange;
 }

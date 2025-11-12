@@ -2,25 +2,30 @@
 include "server/connection.php";
 session_start();
 $error = "";
-if (isset($_SESSION["user_logged_in"]) && $_SESSION["user_logged_in"] == true) {
+if ((isset($_SESSION["user_logged_in"]) && $_SESSION["user_logged_in"] == true) && isset($_SESSION["user_email"])) {
   header("Location: index.php");
   exit();
 } else if (isset($_POST["login"])) {
-  $email = $_POST["email"];
-  $password = $_POST["password"];
-  $user = getUserByEmail($email);
-  if (empty($user)) {
-    $error = "Email not found";
-  } else if (!loginUserByEmail($email, password_hash($password, PASSWORD_DEFAULT))) {
-    $error = "Password is incorrect";
+  $email = trim($_POST["email"]);
+  $password = trim($_POST["password"]);
+
+  $user = loginUserByEmail($email, $password);
+
+  if (!$user) {
+    // Either email not found or incorrect password
+    $error = "Invalid email or password";
   } else {
-    $_SESSION["user_logged_in"] = true;
+    // Login successful
     $_SESSION["user_email"] = $user["user_email"];
     $_SESSION["user_name"] = $user["user_name"];
+    $_SESSION["user_logged_in"] = true;
+
+    // redirect to home or dashboard
     header("Location: index.php");
-    exit();
+    exit;
   }
 }
+
 ?>
 
 
@@ -70,11 +75,13 @@ if (isset($_SESSION["user_logged_in"]) && $_SESSION["user_logged_in"] == true) {
           <form method="post" action="login.php">
             <div class="mb-3">
               <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control rounded-0" id="email" name="email" value="<?php echo $email ?? "";?>" required />
+              <input type="email" class="form-control rounded-0" id="email" name="email"
+                value="<?php echo $email ?? ""; ?>" required />
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control rounded-0" id="password" name="password" value="<?php echo $password ?? "";?>" required />
+              <input type="password" class="form-control rounded-0" id="password" name="password"
+                value="<?php echo $password ?? ""; ?>" required />
             </div>
             <button type="submit" class="btn btn-checkout w-100" name="login">
               Login

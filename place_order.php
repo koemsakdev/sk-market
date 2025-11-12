@@ -54,11 +54,6 @@ if (isset($_POST['place_order'])) {
   } else {
     $error = "Order placement failed. Please try again.";
   }
-
-  // if ($order_id) {
-  //   unset($_SESSION['cart']);
-  //   unset($_SESSION['total']);
-  // }
 }
 
 ?>
@@ -91,7 +86,7 @@ if (isset($_POST['place_order'])) {
 
   <div id="navbar"></div>
 
-  <!-- Register Form Start -->
+  <!-- Order Placement Start -->
   <section class="my-5 py-5">
     <div class="container py-2">
       <h2 class="display-6 fw-bold text-center text-danger">Order Placement Status</h2>
@@ -103,7 +98,7 @@ if (isset($_POST['place_order'])) {
       </div>
     </div>
   </section>
-  <!-- Register Form End -->
+  <!-- Order Placement End -->
 
   <div id="footer"></div>
 

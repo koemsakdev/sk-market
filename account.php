@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION["user_logged_in"]) || $_SESSION["user_logged_in"] == false) {
+if (!(isset($_SESSION["user_logged_in"]) || $_SESSION["user_logged_in"] == false) || !isset($_SESSION["user_email"])) {
   header("Location: login.php");
   exit();
 } else if (isset($_POST["logout"])) {

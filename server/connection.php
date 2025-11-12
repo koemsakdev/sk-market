@@ -119,14 +119,17 @@ function loginUserByEmail($email, $password)
 {
     $sql = "SELECT * FROM users WHERE user_email = ?";
     $params = [$email];
-    $userResult = fetchQuery($sql, $params, "s")[0];
-    if (empty($user)) {
-        return false;
+    $userResult = fetchQuery($sql, $params, "s");
+
+    if (empty($userResult)) {
+        return false; // user not found
     }
+
     $user = $userResult[0];
+
     if (password_verify($password, $user["user_password"])) {
-        return true; // return user data when login success
+        return $user; // login success
     } else {
-        return false; // incorrect password
+        return false; // wrong password
     }
 }

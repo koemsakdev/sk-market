@@ -52,10 +52,10 @@ if (isset($_GET['id'])) {
             id="main-img" />
         </div>
         <?php
-        for ($i = 1; $i <= 4; $i++) {
-          $imageKey = ($i == 1) ? 'product_image' : "product_image$i";
-          $activeClass = ($i == 1) ? 'border-danger' : '';
-          echo "
+          for ($i = 1; $i <= 4; $i++) {
+            $imageKey = ($i == 1) ? 'product_image' : "product_image$i";
+            $activeClass = ($i == 1) ? 'border-danger' : '';
+              echo "
                 <div class='col-lg-3 col-md-3 col-3'>
                   <img
                     src='assets/imgs/{$product[$imageKey]}'
@@ -64,7 +64,7 @@ if (isset($_GET['id'])) {
                   />
                 </div>
               ";
-        }
+          }
         ?>
       </div>
     </div>
